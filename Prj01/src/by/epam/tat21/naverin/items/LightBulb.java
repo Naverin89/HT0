@@ -1,6 +1,6 @@
 package by.epam.tat21.naverin.items;
 
-public class LightBulb implements  iItem{
+public class LightBulb {
     private int lux;
 
     public LightBulb(int lux){
