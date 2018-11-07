@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+
+    <Appenders>
+
+        <File name="FileClone" fileName="dupLog1.log">
+        </File>
+
+        <File name="FILE" fileName="dupLog2.log">
+            <Filters>
+                <ThresholdFilter level="fatal"  onMatch="DENY"   onMismatch="NEUTRAL"/>
+            </Filters>
+        </File>
+
+    </Appenders>
+    <Loggers>
+        <Root level="TRACE">
+            <AppenderRef ref="FILE" level="TRACE"/>
+            <AppenderRef ref="FileClone" level="fatal"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
+
+
+        <!--
+        <Configuration>
+            <Appenders>
+                <Console name="Console">
+                    <PatternLayout>
+                        <Pattern>%d %p %c{2} [%t] %l %m%n</Pattern>
+                    </PatternLayout>
+                </Console>
+                <File name="File" fileName="target/logs/appTest.log">
+                    <PatternLayout>
+                        <Pattern>%d %p %c{2} [%t] %l %m%n</Pattern>
+                    </PatternLayout>
+                </File>
+            </Appenders>
+            <Loggers>
+                <Root level="trace">
+                    <AppenderRef ref="Console"/>
+                    <AppenderRef ref="File"/>
+                </Root>
+            </Loggers>
+        </Configuration>-->
